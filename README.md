@@ -1,2 +1,2 @@
-# reactReduxCounter
+# reactReduxCounterApp
 Created with CodeSandbox
