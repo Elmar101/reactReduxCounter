@@ -9,9 +9,21 @@ export const counterSlice = createSlice({
     },
     decrement: (state) => {
       state.value -= 1;
+    },
+    increamentByAmount: (state, action) => {
+      state.value += action.payload;
     }
   }
 });
-export const { increment, decrement } = counterSlice.actions;
+export const {
+  increment,
+  decrement,
+  increamentByAmount
+} = counterSlice.actions;
+export const increamentByAmountAsync = (amount: number) => (dispatch: any) => {
+  setInterval(() => {
+    dispatch(increamentByAmount(amount));
+  }, 1500);
+};
 export const selectCount = (state: RootState) => state.counter.value;
 export default counterSlice.reducer;
